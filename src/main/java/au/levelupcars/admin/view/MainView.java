@@ -10,8 +10,7 @@ public class MainView extends JFrame {
 
     public MainView(DataController dataController) {
         super("Level Up! Cars - Admin Console");
-        AffineTransform at = getGraphicsConfiguration().getDefaultTransform();
-        setMinimumSize(new Dimension((int) (800 * at.getScaleX()), (int) (600 * at.getScaleY())));
+        setMinimumSize(new Dimension(800, 600));
         pack();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(true);
@@ -19,8 +18,8 @@ public class MainView extends JFrame {
         // Move to center of screen.
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(
-            dim.width / 2 - getSize().width / 2,
-            dim.height / 2 - getSize().height / 2
+                dim.width / 2 - getSize().width / 2,
+                dim.height / 2 - getSize().height / 2
         );
         setLayout(new BorderLayout());
         add(new RequestTableView(dataController), BorderLayout.CENTER);
